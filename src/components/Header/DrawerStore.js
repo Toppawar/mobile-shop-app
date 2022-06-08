@@ -36,6 +36,7 @@ const DrawerStore = () => {
           variant="ghost"
           size="md"
           fontSize="lg"
+          marginRight="2"
           icon={<AiOutlineShoppingCart />}
         />
         {store.cartTotalItems > 0 ? (
