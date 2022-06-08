@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Resumen
 
-## Available Scripts
+Se ha realizado la creación de una SPA siguiendo el siguiente modelo.
 
-In the project directory, you can run:
+Una plataforma donde poder visualizar un listado de teléfonos móviles que incluye un buscador.
+Al hacer click en uno de los teléfonos se realiza la redirección a una página detallada con:
+
+- Las especificaciones generales del producto.
+- Una `overview` donde se selecciona la memória y el color.
+
+Cuando se pulse en el botón de `Add to cart` se mostrará una notificación al usuario y aparecerá un carrito con el número de productos añadidos al mismo en la parte superior derecha del `Header`.
+
+## Tecnologías utilizadas
+
+### Persistencia de datos
+
+En este caso se han distribuido de dos maneras.
+
+1. En la persistencia de datos durante la sesión del cliente en la app mediante `SWR (1)`.
+2. Persistencia en el `localStorage` que mantiene el carrito.
+
+Se cumple la funcionalidad de no renovar los datos durante una hora no solo en el listado de productos si no tambien en cada uno de ellos.
+Además, como mejora se ha añadido un `Lazy Load` en el listado para que en vez de cargar todas las imágenes de la lista, solo se obtengan mediante un `IntersectionObserver`.
+
+### Diseño
+
+Se ha mantenido la estructura indicada en el PDF pero con ciertos retoques. En cuanto a los componentes se han utilizado como base la libreria de `Chakra UI (2)`.
+Además, se ha implementado la libreria de `react-icons (3)` para la iconografia (que además es compatible con la libreria de componentes).
+
+Estas son las dependencias de mayor calibre en cuanto al proyecto. El resto son para la realización de Tests, animaciones/transiciones y la configuración de `eslint`
+
+## Scripts
+
+En el proyecto se pueden ejecutar los siguientes scripts
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ejecuta la app en modo desarrollo.<br />
+Abre [http://localhost:3000](http://localhost:3000) para verla en el navegador.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+La página se actualiza cuando se realizan cambios en el entorno.<br />
+También veras todos los errores que proporciona lint en la consola.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ejecuta todos los test de forma interactiva en la consola.<br />
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Construye la app para el entorno de producción generando una carpeta `build`.<br />
+Empaqueta correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### `npm run lint`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ejecuta el linter en la aplicación y en caso de encontrar errores puede:
 
-### `npm run eject`
+1. Arreglarlos automaticamente.
+2. En caso de requerir intervención, se mostrara un error en el log despues de ejecutar el linter.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Referencias
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. [SWR - Stale While Revalidate](https://swr.vercel.app/es-ES)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. [Chakra UI](https://chakra-ui.com/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+3. [React Icons](https://react-icons.github.io/react-icons/)
