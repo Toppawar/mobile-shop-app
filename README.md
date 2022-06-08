@@ -1,3 +1,9 @@
+# Demo
+
+Demo desplegada con Vercel
+
+[https://mobile-shop-app.vercel.app/](https://mobile-shop-app.vercel.app/)
+
 # Resumen
 
 Se ha realizado la creación de una SPA siguiendo el siguiente modelo.
@@ -64,3 +70,8 @@ Ejecuta el linter en la aplicación y en caso de encontrar errores puede:
 2. [Chakra UI](https://chakra-ui.com/)
 
 3. [React Icons](https://react-icons.github.io/react-icons/)
+
+## Mejoras a implementar
+
+1. Añadir unos cuantos test más.
+2. Implementar GitHub Actions para manejar un workflow automatizado incluyendo las pruebas CI/CD antes de cualquier Merge / Despliegue.
