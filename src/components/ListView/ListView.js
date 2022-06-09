@@ -1,4 +1,4 @@
-import { lazy, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   SimpleGrid,
   Box,
@@ -8,12 +8,10 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 
+import ListItem from "./ListItem";
+
 import debounce from "../../utils/debounce";
 import { filterArray } from "../../utils/array";
-
-const ListItem = lazy(() => {
-  return import("./ListItem");
-});
 
 const ListView = ({ data, onClick }) => {
   const [search, setSearch] = useState("");
@@ -31,9 +29,9 @@ const ListView = ({ data, onClick }) => {
         setList(data);
         return;
       }
-      setList(filterArray(value, list));
+      setList(filterArray(value, data));
     }, 1000),
-    [list, data]
+    [data]
   );
 
   const handleChange = (e) => {
@@ -60,6 +58,7 @@ const ListView = ({ data, onClick }) => {
         </InputGroup>
       </Box>
       <SimpleGrid minChildWidth="240px" columns={2} spacing="40px">
+        {!list?.length ? <Box>No results found</Box> : null}
         {list?.map(({ model, brand, imgUrl, price, id }) => {
           return (
             <Box

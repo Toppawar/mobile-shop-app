@@ -9,7 +9,7 @@
  */
 
 const fetcher = ({ url, method = "GET", body = null, headers }) => {
-  return fetch(`https://front-test-api.herokuapp.com${url}`, {
+  return fetch(`${process.env.REACT_APP_URL_ENDPOINT}${url}`, {
     method,
     body,
     headers: {
