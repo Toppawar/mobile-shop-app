@@ -44,15 +44,15 @@ const App = () => {
             justifyContent="start"
             alignItems="center"
           >
-            <Header />
-            <ErrorBoundary>
-              <BrowserRouter>
+            <BrowserRouter>
+              <Header />
+              <ErrorBoundary>
                 <Routes>
                   <Route index path={ROUTES.HOME} element={<Products />} />
                   <Route path={ROUTES.PRODUCT} element={<Product />} />
                 </Routes>
-              </BrowserRouter>
-            </ErrorBoundary>
+              </ErrorBoundary>
+            </BrowserRouter>
           </Flex>
         </StoreProvider>
       </SWRConfig>
