@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   Box,
   Flex,
