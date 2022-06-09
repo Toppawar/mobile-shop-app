@@ -24,7 +24,6 @@ const Header = () => {
   const { colorMode } = useColorMode();
   const navigate = useNavigate();
   const location = useLocation();
-  const { productId } = useParams();
 
   const logoColor = useMemo(() => {
     return colorMode === "light"
